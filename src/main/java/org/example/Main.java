@@ -168,5 +168,16 @@ public class Main {
         Thread tConsumer = new Thread(new Consumer(taskQueue), "Consumer");
         tProducer.start();
         tConsumer.start();
+          Thread threadA=new VolatileDemo.ThreadA();
+          Thread threadB=new VolatileDemo.ThreadB();
+
+          threadA.start();
+          threadB.start();
+
+
+          threadA.join();
+          threadB.join();
+
+
     }
 }
